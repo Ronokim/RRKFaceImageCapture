@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8C-kN-9aA">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pp4-oc-ZDk">
+            <objects>
+                <navigationController id="C8C-kN-9aA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1HL-ze-IYb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dEe-II-59v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKg-PX-ziJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1087" y="134"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="MainViewController" customModule="FaceDetectionRnD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCY-x3-m3X">
+                                <rect key="frame" x="136.5" y="433" width="141" height="30"/>
+                                <state key="normal" title="Take passport photo"/>
+                                <connections>
+                                    <action selector="takePhotoButtonListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Le0-VW-6sm"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EO1-fW-1iL">
+                                <rect key="frame" x="76" y="150" width="262" height="262"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EO1-fW-1iL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="WqW-OJ-B23"/>
+                            <constraint firstItem="DCY-x3-m3X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XiD-IM-9k6"/>
+                            <constraint firstItem="DCY-x3-m3X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dFP-fu-Z0H"/>
+                            <constraint firstItem="EO1-fW-1iL" firstAttribute="centerX" secondItem="DCY-x3-m3X" secondAttribute="centerX" id="eSz-NQ-6HB"/>
+                            <constraint firstItem="EO1-fW-1iL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="jpq-Bs-Gyt"/>
+                            <constraint firstItem="DCY-x3-m3X" firstAttribute="top" secondItem="EO1-fW-1iL" secondAttribute="bottom" constant="21" id="oZ2-eE-fPl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2ji-GC-yoY"/>
+                    <connections>
+                        <outlet property="faceImageView" destination="EO1-fW-1iL" id="QYh-FH-pq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.31884057971016" y="133.92857142857142"/>
+        </scene>
+        <!--Face Capture View Controller-->
+        <scene sceneID="o9Y-yf-Jii">
+            <objects>
+                <viewController storyboardIdentifier="FaceCaptureViewController" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vYW-Ke-Xbx" customClass="FaceCaptureViewController" customModule="FaceDetectionRnD" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="aXh-TP-awh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-0F-7U3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0p-Ik-U9C">
+                                        <rect key="frame" x="126" y="790" width="162" height="49"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2gm-Zv-Aio">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMO-0S-XGz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="49"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Capture">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="captureImageButtonListener:" destination="vYW-Ke-Xbx" eventType="touchUpInside" id="Hgu-Kp-kNi"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="hMO-0S-XGz" firstAttribute="top" secondItem="2gm-Zv-Aio" secondAttribute="top" id="ayr-dy-ev9"/>
+                                                <constraint firstItem="hMO-0S-XGz" firstAttribute="leading" secondItem="2gm-Zv-Aio" secondAttribute="leading" id="bjC-g4-QUe"/>
+                                                <constraint firstAttribute="bottom" secondItem="hMO-0S-XGz" secondAttribute="bottom" id="tlH-RT-7Fi"/>
+                                                <constraint firstAttribute="trailing" secondItem="hMO-0S-XGz" secondAttribute="trailing" id="tlq-Gv-NPx"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="6K5-lh-S5I"/>
+                                            <constraint firstAttribute="width" constant="162" id="pR7-gF-ywd"/>
+                                        </constraints>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="c0p-Ik-U9C" firstAttribute="centerX" secondItem="rrW-0F-7U3" secondAttribute="centerX" id="dLC-j8-DII"/>
+                                    <constraint firstAttribute="bottom" secondItem="c0p-Ik-U9C" secondAttribute="bottom" constant="13" id="qNT-Ju-sio"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="rrW-0F-7U3" firstAttribute="leading" secondItem="aXh-TP-awh" secondAttribute="leading" id="4H3-GE-Mhw"/>
+                            <constraint firstAttribute="trailing" secondItem="rrW-0F-7U3" secondAttribute="trailing" id="P2k-ta-eQi"/>
+                            <constraint firstAttribute="bottom" secondItem="rrW-0F-7U3" secondAttribute="bottom" id="SbZ-28-9KD"/>
+                            <constraint firstItem="rrW-0F-7U3" firstAttribute="top" secondItem="aMR-CH-Z4w" secondAttribute="top" id="lxO-ea-LfM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aMR-CH-Z4w"/>
+                    </view>
+                    <connections>
+                        <outlet property="captureButton" destination="hMO-0S-XGz" id="Uu8-IJ-cWT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMa-Xa-QKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921.73913043478262" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>

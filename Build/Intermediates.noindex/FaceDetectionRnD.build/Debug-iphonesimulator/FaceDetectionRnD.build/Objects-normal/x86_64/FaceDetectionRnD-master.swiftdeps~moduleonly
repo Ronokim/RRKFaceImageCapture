@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "b527721cb1f1ad06c9a15daec6abfe54"
+build_time: [1569074897, 234469000]
+inputs:
+  "/Users/ronald/Documents/xcodespace/FaceDetectionRnD/FaceDetectionRnD/ViewControllers/MainViewController.swift": [1568981503, 927367659]
+  "/Users/ronald/Documents/xcodespace/FaceDetectionRnD/FaceDetectionRnD/AppDelegate.swift": [1568628717, 390015758]
+  "/Users/ronald/Documents/xcodespace/FaceDetectionRnD/FaceDetectionRnD/ViewControllers/FaceCaptureViewController.swift": [1568981301, 470826350]
